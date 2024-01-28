@@ -19,6 +19,9 @@ public class OfferEntity extends BaseEntity {
     private int mileage;
 
     @Column(nullable = false)
+    private String description;
+
+    @Column(nullable = false)
     private BigDecimal price;
 
     @Enumerated(EnumType.STRING)
@@ -102,6 +105,15 @@ public class OfferEntity extends BaseEntity {
 
     public OfferEntity setSeller(UserEntity seller) {
         this.seller = seller;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public OfferEntity setDescription(String description) {
+        this.description = description;
         return this;
     }
 
