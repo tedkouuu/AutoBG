@@ -1,5 +1,7 @@
 ### AutoBG is a web application built with Spring, designed for the seamless posting and selling of cars. This platform provides users with a user-friendly interface to list their vehicles and connect with potential buyers.
 
+![AutoBG Screenshot](/src/main/resources/static/images/app-index.png)
+
 ### Key Features:
 
 #### Effortless Listing: Easily create and manage car listings with our intuitive interface.
