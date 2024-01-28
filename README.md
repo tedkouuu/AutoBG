@@ -1,0 +1,1 @@
+## AutoBG Classifieds is a web application built with Spring, designed for the seamless posting and selling of cars. This platform provides users with a user-friendly interface to list their vehicles and connect with potential buyers.
