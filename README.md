@@ -22,6 +22,8 @@
 
 #### Spring Framework: Leveraging the power of Spring for robust backend development.
 
+#### Spring Boot: Accelerating the development process with convention over configuration and ready-to-use defaults.
+
 #### Thymeleaf: Dynamic and elegant HTML templates for a seamless user experience.
 
 #### Spring Data Jpa: Object-relational mapping for efficient database operations.
