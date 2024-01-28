@@ -23,3 +23,5 @@
 #### Thymeleaf: Dynamic and elegant HTML templates for a seamless user experience.
 
 #### Spring Data Jpa: Object-relational mapping for efficient database operations.
+
+#### Spring Security: Ensuring a secure authentication and authorization system for the application.
