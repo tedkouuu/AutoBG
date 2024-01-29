@@ -2,6 +2,8 @@
 
 ![AutoBG Screenshot](/src/main/resources/static/images/app-index.png)
 
+![AutoBG Screenshot](/src/main/resources/static/images/app-login.png)
+
 ### Key Features:
 
 #### Effortless Listing: Easily create and manage car listings with our intuitive interface.
