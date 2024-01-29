@@ -2,6 +2,8 @@
 
 ![AutoBG Screenshot](/src/main/resources/static/images/app-index.png)
 
+#### Login page:
+
 ![AutoBG Screenshot](/src/main/resources/static/images/app-login.png)
 
 ### Key Features:
