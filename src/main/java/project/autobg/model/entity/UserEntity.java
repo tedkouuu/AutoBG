@@ -1,7 +1,6 @@
 package project.autobg.model.entity;
 
 import jakarta.persistence.*;
-import project.autobg.model.enums.UserRoleEnum;
 
 import java.util.ArrayList;
 import java.util.List;
