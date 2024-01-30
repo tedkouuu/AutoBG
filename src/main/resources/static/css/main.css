@@ -6,6 +6,7 @@ body {
     background-size: cover;
     background-color: #464646;
     position: relative;
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -40,5 +41,12 @@ body {
 
 .nav ul li {
     margin-right: 10px;
+}
+
+.welcome-msg {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
 }
 
