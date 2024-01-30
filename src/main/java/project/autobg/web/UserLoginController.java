@@ -3,10 +3,12 @@ package project.autobg.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import project.autobg.model.dto.UserLoginDTO;
 import project.autobg.service.UserService;
 
 @Controller
+@RequestMapping("/users")
 public class UserLoginController {
 
     private final UserService userService;
@@ -15,21 +17,20 @@ public class UserLoginController {
         this.userService = userService;
     }
 
-    @GetMapping("/users/login")
+    @GetMapping("/login")
     public String login() {
         return "auth-login";
     }
 
-    @GetMapping("/users/logout")
+    @GetMapping("/logout")
     public String logout() {
         userService.logout();
         return "redirect:/";
     }
 
-    @PostMapping("/users/login")
+    @PostMapping("/login")
     public String login(UserLoginDTO loginDTO) {
-
-        System.out.println("User is logged: " + userService.login(loginDTO));
+        userService.login(loginDTO);
         return "redirect:/";
     }
 }

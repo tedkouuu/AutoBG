@@ -46,7 +46,7 @@ public class UserService {
     private void login(UserEntity userEntity) {
         currentUser.
                 setLoggedIn(true).
-                setName(userEntity.getFirstName() + " " + userEntity.getLastName());
+                setName(userEntity.getFirstName());
     }
 
     public void logout() {

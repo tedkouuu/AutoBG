@@ -1,0 +1,101 @@
+body {
+    background-image: url('/images/bugatti-darken.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+#logo-img {
+    padding-top: 20px;
+    padding-left: 20px;
+    height: 50px;
+    width: 100px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding-left: 30px;
+    padding-top: 35px;
+}
+
+.nav ul li {
+    margin-right: 10px;
+}
+
+.register-div {
+    border-radius: 10px;
+    padding: 20px;
+    height: 480px;
+    width: 600px;
+    background-color: rgba(36, 35, 32, 0.8);
+    margin: 0 auto
+}
+
+.register-text {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 10px;
+
+}
+
+.register-div label {
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 20px;
+
+}
+
+.register-div .input_register {
+    padding: 10px;
+    width: 550px;
+    border-radius: 5px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.input_register:last-of-type {
+    margin-bottom: 1px;
+}
+
+.register-div .register-btn {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: rgb(226, 63, 63);
+    color: white;
+    font-size: larger;
+}
+
+.register-div .register-btn:hover {
+    background-color: red;
+
+}
+
+
+
+
+
