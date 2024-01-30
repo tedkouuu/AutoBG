@@ -2,6 +2,7 @@ package project.autobg.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import project.autobg.model.dto.UserLoginDTO;
 import project.autobg.model.entity.UserEntity;
@@ -17,10 +18,12 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final CurrentUser currentUser;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository, CurrentUser currentUser) {
+    public UserService(UserRepository userRepository, CurrentUser currentUser, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.currentUser = currentUser;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public boolean login(UserLoginDTO loginDTO) {
@@ -32,7 +35,11 @@ public class UserService {
             return false;
         }
 
-        boolean success = userOpt.get().getPassword().equals(loginDTO.getPassword());
+        String rawPassword = loginDTO.getPassword();
+        String encodedPassword = userOpt.get().getPassword();
+
+        boolean success = passwordEncoder.
+                matches(rawPassword, encodedPassword);
 
         if (success) {
             login(userOpt.get());
