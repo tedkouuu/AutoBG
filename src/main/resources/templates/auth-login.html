@@ -13,19 +13,7 @@
 
 <body>
 
-<nav class="nav">
-    <a href="/"><img id="logo-img" alt="car picture" src="/images/car.png"></a>
-    <ul>
-        <li><a href="/brands/all">All Brands</a></li>
-        <li><a href="/offers/add">Add Offer</a></li>
-        <li><a href="/offers/all">All Offers</a></li>
-        <li><a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a></li>
-        <li><a href="/users/logout">Logout</a></li>
-        <li><a href="/users/register">Register</a></li>
-        <li><a href="/users/login">Login</a></li>
-    </ul>
-</nav>
+<div th:replace="fragments/navbar">Navbar</div>
 
 <h3 class="login-text">Login</h3>
 

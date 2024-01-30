@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import project.autobg.model.dto.UserLoginDTO;
+import project.autobg.model.dto.UserRegisterDTO;
 import project.autobg.model.entity.UserEntity;
 import project.autobg.repository.UserRepository;
 import project.autobg.user.CurrentUser;
@@ -48,6 +49,21 @@ public class UserService {
         }
 
         return success;
+    }
+
+    public void registerAndLogin(UserRegisterDTO userRegisterDTO) {
+
+        UserEntity newUser =
+                new UserEntity().
+                        setActive(true).
+                        setEmail(userRegisterDTO.getEmail()).
+                        setFirstName(userRegisterDTO.getFirstName()).
+                        setLastName(userRegisterDTO.getLastName()).
+                        setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()));
+
+        userRepository.save(newUser);
+        login(newUser);
+
     }
 
     private void login(UserEntity userEntity) {
