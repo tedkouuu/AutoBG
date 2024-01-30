@@ -35,3 +35,5 @@
 #### Spring Data Jpa: Object-relational mapping for efficient database operations.
 
 #### Spring Security: Ensuring a secure authentication and authorization system for the application.
+
+#### MySQL: Integrated for efficient data storage and retrieval.
