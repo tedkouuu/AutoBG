@@ -28,7 +28,15 @@
 </nav>
 
 <h3 class="welcome-msg">
-    Welcome to AutoBG
+    Welcome to AutoBG,
+    <!--  Refer the CurrentUser bean  -->
+    <span th:if="${@currentUser.isLoggedIn()}"
+          th:text="${@currentUser.getName()}">
+    </span>
+
+    <span th:if="${@currentUser.isAnonymous()}">
+        Anonymous
+    </span>
 </h3>
 
 <div>
