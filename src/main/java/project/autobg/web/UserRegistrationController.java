@@ -1,5 +1,6 @@
 package project.autobg.web;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +24,7 @@ public class UserRegistrationController {
     }
 
     @PostMapping("/register")
-    public String register(UserRegisterDTO userRegisterDTO) {
+    public String register(@Valid UserRegisterDTO userRegisterDTO) {
 
         userService.registerAndLogin(userRegisterDTO);
         return "redirect:/";
