@@ -39,6 +39,11 @@ public class UserRegistrationController {
 
         if (bindingResult.hasErrors()) {
 
+             /*
+             When a redirect is performed after the current request is processed,
+             the flash attributes are stored temporarily and are made available in the subsequent request.
+             */
+
             redirectAttributes.addFlashAttribute("userModel", userRegisterDTO);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userModel", bindingResult);
 

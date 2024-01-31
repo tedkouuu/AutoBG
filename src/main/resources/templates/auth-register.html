@@ -33,12 +33,16 @@
         <br>
         <label>Last Name</label>
         <input class="input_register"
+               th:field="*{lastName}"
+               th:errorclass="is-invalid"
                type="text"
                name="lastName"
                placeholder="Last name">
         <br>
         <label>Username</label>
         <input class="input_register"
+               th:field="*{email}"
+               th:errorclass="is-invalid"
                type="email"
                name="email"
                placeholder="Email">
