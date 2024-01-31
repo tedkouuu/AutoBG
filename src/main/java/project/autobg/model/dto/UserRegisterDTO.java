@@ -22,6 +22,8 @@ public class UserRegisterDTO {
     @Size(min = 3, max = 20)
     private String password;
 
+    @NotEmpty
+    @Size(min = 3, max = 20)
     private String confirmPassword;
 
     public String getFirstName() {

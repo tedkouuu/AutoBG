@@ -20,21 +20,41 @@
 <div class="register-div">
 
     <form th:method="post"
-          th:action="@{/users/register}">
+          th:action="@{/users/register}"
+          th:object="${userModel}">
+
         <label>First Name</label>
-        <input class="input_register" type="text" name="firstName" placeholder="First name">
+        <input class="input_register"
+               th:field="*{firstName}"
+               th:errorclass="is-invalid"
+               type="text"
+               name="firstName"
+               placeholder="First name">
         <br>
         <label>Last Name</label>
-        <input class="input_register" type="text" name="lastName" placeholder="Last name">
+        <input class="input_register"
+               type="text"
+               name="lastName"
+               placeholder="Last name">
         <br>
         <label>Username</label>
-        <input class="input_register" type="email" name="email" placeholder="Email">
+        <input class="input_register"
+               type="email"
+               name="email"
+               placeholder="Email">
         <br>
         <label>Password</label>
-        <input class="input_register" type="password" name="password" placeholder="Password">
+        <input class="input_register"
+               type="password"
+               name="password"
+               placeholder="Password">
         <br>
         <label>Confirm Password</label>
-        <input class="input_register" type="password" name="confirmPassword" placeholder="Confirm password">
+        <input class="input_register"
+               type="password"
+               name="confirmPassword"
+               placeholder="Confirm password">
+
         <button class="register-btn">Register</button>
     </form>
 
