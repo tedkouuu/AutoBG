@@ -17,6 +17,10 @@ platform provides users with a user-friendly interface to list their vehicles an
 
 ![AutoBG Screenshot](/src/main/resources/static/images/app-register.png)
 
+### Add offer page:
+
+![AutoBG Screenshot](/src/main/resources/static/images/app-register.png)
+
 ## Key Features
 
 - **Effortless Listing:** Easily create and manage car listings with our intuitive interface.
