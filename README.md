@@ -19,7 +19,7 @@ platform provides users with a user-friendly interface to list their vehicles an
 
 ### Add offer page:
 
-![AutoBG Screenshot](/src/main/resources/static/images/register.png)
+![AutoBG Screenshot](/src/main/resources/static/images/add-offer.png)
 
 ## Key Features
 
