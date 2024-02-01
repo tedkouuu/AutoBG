@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -8,59 +7,93 @@
     <link rel="stylesheet" href="/css/reset.css"/>
     <link rel="stylesheet" href="/css/add-offer.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
 <div th:replace="fragments/navbar">Navbar</div>
 
-<h3 class="register-text">Register</h3>
+<h3 class="offer-add-text">Upload Offer</h3>
 
-<div class="register-div">
+<div class="offer-add-div">
 
     <form th:method="post"
-          th:action="@{/users/register}"
-          th:object="${userModel}">
+          th:action="@{/offers/add}">
+        <!--          th:object="${offerModel}">-->
 
-        <label>First Name</label>
-        <input class="input_register"
-               th:field="*{firstName}"
-               th:errorclass="is-invalid"
-               type="text"
-               name="firstName"
-               placeholder="First name">
-        <br>
-        <label>Last Name</label>
-        <input class="input_register"
-               th:field="*{lastName}"
-               th:errorclass="is-invalid"
-               type="text"
-               name="lastName"
-               placeholder="Last name">
-        <br>
-        <label>Username</label>
-        <input class="input_register"
-               th:field="*{email}"
-               th:errorclass="is-invalid"
-               type="email"
-               name="email"
-               placeholder="Email">
-        <br>
-        <label>Password</label>
-        <input class="input_register"
-               th:field="*{password}"
-               th:errorclass="is-invalid"
-               name="password"
-               placeholder="Password">
-        <br>
-        <label>Confirm Password</label>
-        <input class="input_register"
-               type="password"
-               name="confirmPassword"
-               placeholder="Confirm password">
+        <div class="wrapper">
 
-        <button class="register-btn">Register</button>
+            <div class="form-row">
+                <div class="form-item space">
+                    <label>Model</label><br>
+                    <select class="select-offer-add" name="model">
+                        <option value="model">Model</option>
+                        <option value="model2">Model 2</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-item">
+                    <label>Price</label><br>
+                    <input class="input-offer-add" type="text" name="price" placeholder="Price">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-row">
+                <div class="form-item space">
+                    <label>Engine</label>
+                    <br>
+                    <select class="select-offer-add" name="engine">
+                        <option value="engine">Engine</option>
+                        <option value="engine2">Engine 2</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-item">
+                    <label>Transmission</label>
+                    <br>
+                    <select class="select-offer-add" name="transmission">
+                        <option value="transmission">Transmission</option>
+                        <option value="transmission2">Transmission 2</option>
+                    </select>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-row">
+                <div class="form-item space">
+                    <label>Year</label>
+                    <br>
+                    <input class="input-offer-add" type="text" name="year" placeholder="Year">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-item">
+                    <label>Mileage</label>
+                    <br>
+                    <input class="input-offer-add" type="text" name="mileage" placeholder="Mileage">
+                </div>
+            </div>
+
+            <label>Description</label>
+            <br>
+            <textarea name="description" rows="10" placeholder="Description"></textarea>
+
+            <label>Image URL</label>
+            <br>
+            <input id="last-form-input" class="input-offer-add" type="text" name="imageURL"
+                   placeholder="Put your vehicle here">
+
+            <button class="offer-add-btn">Add Offer</button>
+        </div>
+
     </form>
 
 </div>
@@ -70,4 +103,5 @@
 </div>
 
 </body>
+
 </html>

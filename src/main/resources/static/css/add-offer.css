@@ -10,6 +10,32 @@ body {
 
 }
 
+.wrapper {
+    padding-left: 6px;
+}
+
+.form-row {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+#last-form-input {
+    width: 565px;
+    margin-bottom: 20px;
+}
+
+form textarea {
+    width: 575px;
+    height: 100px;
+    border-radius: 6px;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+.form-item.space {
+    margin-right: 20px;
+}
+
 .nav a {
     text-decoration: none;
     color: white;
@@ -43,16 +69,16 @@ body {
     margin-right: 10px;
 }
 
-.login-div {
+.offer-add-div {
     border-radius: 10px;
     padding: 20px;
-    height: 200px;
+    height: 540px;
     width: 600px;
     background-color: rgba(36, 35, 32, 0.8);
     margin: 0 auto
 }
 
-.login-text {
+.offer-add-text {
     color: white;
     font-weight: bold;
     text-align: center;
@@ -61,27 +87,29 @@ body {
 
 }
 
-.login-div label {
+.offer-add-div label {
     color: white;
     font-weight: bold;
-    font-size: large;
+    font-size: medium;
     margin-bottom: 20px;
 
 }
 
-.login-div .input_login {
+.offer-add-div .input-offer-add {
     padding: 8px;
-    width: 575px;
+    width: 258px;
     border-radius: 5px;
     margin-top: 6px;
 }
 
-.input_login:first-of-type {
-    margin-bottom: 15px;
+.offer-add-div .select-offer-add {
+    padding: 8px;
+    width: 277px;
+    border-radius: 5px;
+    margin-top: 6px;
 }
 
-.login-div .login_btn {
-    margin-top: 15px;
+.offer-add-div .offer-add-btn {
     padding: 10px;
     border-radius: 6px;
     background-color: rgb(226, 63, 63);
@@ -89,7 +117,7 @@ body {
     font-size: larger;
 }
 
-.login-div .login_btn:hover {
+.offer-add-div .offer-add-btn:hover {
     background-color: red;
 
 }
