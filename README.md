@@ -11,15 +11,15 @@ platform provides users with a user-friendly interface to list their vehicles an
 
 ### Login page:
 
-![AutoBG Screenshot](/src/main/resources/static/images/app-login.png)
+![AutoBG Screenshot](/src/main/resources/static/images/login.png)
 
 ### Register page:
 
-![AutoBG Screenshot](/src/main/resources/static/images/app-register.png)
+![AutoBG Screenshot](/src/main/resources/static/images/register.png)
 
 ### Add offer page:
 
-![AutoBG Screenshot](/src/main/resources/static/images/app-register.png)
+![AutoBG Screenshot](/src/main/resources/static/images/register.png)
 
 ## Key Features
 
