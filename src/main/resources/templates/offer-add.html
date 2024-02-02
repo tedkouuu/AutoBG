@@ -20,8 +20,8 @@
 <div class="offer-add-div">
 
     <form th:method="post"
-          th:action="@{/offers/add}">
-        <!--          th:object="${offerModel}">-->
+          th:action="@{/offers/add}"
+          th:object="${addOfferModel}">
 
         <div class="wrapper">
 
@@ -29,8 +29,9 @@
                 <div class="form-item space">
                     <label>Model</label><br>
                     <select class="select-offer-add" name="model">
-                        <option value="model">Model</option>
-                        <option value="model2">Model 2</option>
+                        <option>
+                            Model type
+                        </option>
                     </select>
                 </div>
             </div>
@@ -48,9 +49,15 @@
                 <div class="form-item space">
                     <label>Engine</label>
                     <br>
-                    <select class="select-offer-add" name="engine">
-                        <option value="engine">Engine</option>
-                        <option value="engine2">Engine 2</option>
+                    <select class="select-offer-add"
+                            name="engine"
+                            th:errorclass="is-invalid">
+                        <option th:each="e : ${T(project.autobg.model.enums.EngineEnum).values()}"
+                                th:text="${e}"
+                                th:value="${e}"
+                                th:selected="${e} == *{engine}">
+                            Engine type
+                        </option>
                     </select>
                 </div>
             </div>
@@ -59,9 +66,16 @@
                 <div class="form-item">
                     <label>Transmission</label>
                     <br>
-                    <select class="select-offer-add" name="transmission">
-                        <option value="transmission">Transmission</option>
-                        <option value="transmission2">Transmission 2</option>
+                    <select class="select-offer-add"
+                            name="transmission"
+                            th:errorclass="is-invalid">
+
+                        <option th:each="t : ${T(project.autobg.model.enums.TransmissionEnum).values()}"
+                                th:text="${t}"
+                                th:value="${t}"
+                                th:selected="${t} == *{transmission}">
+                            Transmission type
+                        </option>
                     </select>
                 </div>
             </div>
@@ -91,7 +105,7 @@
             <label>Image URL</label>
             <br>
             <input id="last-form-input" class="input-offer-add" type="text" name="imageURL"
-                   placeholder="Put your vehicle here">
+                   placeholder="Put vehicle image URL here">
 
             <button class="offer-add-btn">Add Offer</button>
         </div>
