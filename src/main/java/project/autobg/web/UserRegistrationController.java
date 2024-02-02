@@ -22,13 +22,14 @@ public class UserRegistrationController {
         this.userService = userService;
     }
 
-    @ModelAttribute("userModel")
-    public UserRegisterDTO initUserModel() {
-        return new UserRegisterDTO();
-    }
-
     @GetMapping("/register")
-    public String register() {
+    public String register(Model model) {
+
+        if (!model.containsAttribute("userModel")) {
+            model.addAttribute("userModel",
+                    new UserRegisterDTO());
+        }
+
         return "auth-register";
     }
 
