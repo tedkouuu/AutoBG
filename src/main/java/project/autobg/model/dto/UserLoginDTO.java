@@ -1,9 +1,17 @@
 package project.autobg.model.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class UserLoginDTO {
 
+    @NotEmpty
+    @Email
     private String username;
 
+    @NotEmpty
+    @Size(min = 3, max = 20, message = "Size must be between 3 and and 20")
     private String password;
 
     public String getUsername() {

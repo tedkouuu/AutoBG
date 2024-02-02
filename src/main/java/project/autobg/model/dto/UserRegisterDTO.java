@@ -7,11 +7,11 @@ import jakarta.validation.constraints.Size;
 public class UserRegisterDTO {
 
     @NotEmpty
-    @Size(min = 3, max = 20)
+    @Size(min = 3, max = 20, message = "Size must be between 3 and and 20")
     private String firstName;
 
     @NotEmpty
-    @Size(min = 3, max = 20)
+    @Size(min = 3, max = 20, message = "Size must be between 3 and and 20")
     private String lastName;
 
     @NotEmpty
@@ -19,11 +19,11 @@ public class UserRegisterDTO {
     private String email;
 
     @NotEmpty
-    @Size(min = 3, max = 20)
+    @Size(min = 3, max = 20, message = "Size must be between 3 and and 20")
     private String password;
 
     @NotEmpty
-    @Size(min = 3, max = 20)
+    @Size(min = 3, max = 20, message = "Size must be between 3 and and 20")
     private String confirmPassword;
 
     public String getFirstName() {
