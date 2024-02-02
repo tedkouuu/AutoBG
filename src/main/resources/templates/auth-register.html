@@ -13,6 +13,8 @@
 
 <body>
 
+<!-- TODO: Add client-side validations -->
+
 <div th:replace="fragments/navbar">Navbar</div>
 
 <h3 class="register-text">Register</h3>
@@ -57,6 +59,8 @@
         <br>
         <label>Confirm Password</label>
         <input class="input_register"
+               th:field="*{confirmPassword}"
+               th:errorclass="is-invalid"
                type="password"
                name="confirmPassword"
                placeholder="Confirm password">

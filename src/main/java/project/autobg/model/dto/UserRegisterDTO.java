@@ -3,8 +3,14 @@ package project.autobg.model.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import project.autobg.model.validation.FieldMatch;
 import project.autobg.model.validation.UniqueUserEmail;
 
+@FieldMatch(
+        first = "password",
+        second = "confirmPassword",
+        message = "Passwords should match"
+)
 public class UserRegisterDTO {
 
     @NotEmpty
