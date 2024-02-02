@@ -5,6 +5,7 @@ import org.mapstruct.Mapping;
 import project.autobg.model.dto.UserRegisterDTO;
 import project.autobg.model.entity.UserEntity;
 
+// UserMapper automatically is being recognised as a bean
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 

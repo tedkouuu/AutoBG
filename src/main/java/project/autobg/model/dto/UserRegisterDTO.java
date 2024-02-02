@@ -3,6 +3,7 @@ package project.autobg.model.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import project.autobg.model.validation.UniqueUserEmail;
 
 public class UserRegisterDTO {
 
@@ -14,8 +15,9 @@ public class UserRegisterDTO {
     @Size(min = 3, max = 20, message = "Size must be between 3 and and 20")
     private String lastName;
 
-    @NotEmpty
-    @Email
+    @NotEmpty(message = "User email should be provided")
+    @Email(message = "User email should be valid")
+    @UniqueUserEmail(message = "User email should be unique")
     private String email;
 
     @NotEmpty
