@@ -6,7 +6,7 @@ import project.autobg.model.dto.AddOfferDTO;
 @Service
 public class OfferService {
 
-    public void addOffer(AddOfferDTO addOfferDTO){
+    public void addOffer(AddOfferDTO addOfferDTO) {
 
     }
 }

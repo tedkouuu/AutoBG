@@ -12,4 +12,5 @@ public interface UserMapper {
     @Mapping(target = "active", constant = "true")
     UserEntity userDtoToUserEntity(UserRegisterDTO userRegisterDTO);
 
+
 }

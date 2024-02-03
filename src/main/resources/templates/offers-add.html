@@ -28,10 +28,20 @@
             <div class="form-row">
                 <div class="form-item space">
                     <label>Model</label><br>
-                    <select class="select-offer-add" name="model">
+                    <select
+                            class="select-offer-add"
+                            name="modelId"
+                            th:errorclass="is-invalid">
                         <option>
-                            Model type
+                            - Select a model -
                         </option>
+                        <optgroup
+                                th:each="brand : ${brands}"
+                                th:label="${brand.name}">
+                            <option>Model1</option>
+                            <option>Model2</option>
+                            <option>Model3</option>
+                        </optgroup>
                     </select>
                 </div>
             </div>
