@@ -1,6 +1,7 @@
 package project.autobg.model.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import project.autobg.model.enums.EngineEnum;
 import project.autobg.model.enums.TransmissionEnum;
 
@@ -14,6 +15,7 @@ public class OfferEntity extends BaseEntity {
     @Column(nullable = false)
     private EngineEnum engine;
 
+    @NotNull
     private String imageUrl;
 
     private int mileage;

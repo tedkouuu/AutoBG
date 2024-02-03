@@ -24,7 +24,7 @@ public class OfferController {
 
     @GetMapping("/offers/all")
     public String allOffers() {
-        return "offers";
+        return "all-offers";
     }
 
     @GetMapping("/offers/add")

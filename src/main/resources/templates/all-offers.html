@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AutoBG</title>
+    <link rel="stylesheet" href="/css/reset.css"/>
+    <link rel="stylesheet" href="/css/all-offers.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div th:replace="fragments/navbar">Navbar</div>
+
+<h3 class="title">All Offers</h3>
+
+<div class="card">
+    <img src="https://prod.pictures.autoscout24.net/listing-images/0318f232-8eab-4e8a-968e-a6839500c1cf_154c8abe-24ed-4766-8228-0900696bf7bc.jpg/250x188.webp"
+         alt="car img">
+    <h3>Offer Details:</h3>
+    <p><strong>Engine:</strong> DIESEL</p>
+    <p><strong>Transmission:</strong> MANUAL</p>
+    <p><strong>Price:</strong> $40000</p>
+    <p><strong>Year:</strong> 2000</p>
+    <p><strong>Mileage:</strong> 30000</p>
+    <p><strong>Description:</strong> The car is the the best I have ever had</p>
+    <button class="edit">Edit</button>
+    <button>Delete</button>
+
+</div>
+
+<div>
+    <footer></footer>
+</div>
+
+</body>
+
+</html>
