@@ -63,3 +63,4 @@ platform provides users with a user-friendly interface to list their vehicles an
 - **Spring Security:** Ensuring a secure authentication and authorization system for the application.
 - **Thymeleaf:** Dynamic and elegant HTML templates for a seamless user experience.
 - **MySQL:** Integrated for efficient data storage and retrieval.
+- **WebSocket:** Real-time communication between the client and the server.
