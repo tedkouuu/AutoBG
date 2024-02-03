@@ -23,6 +23,7 @@
         <li th:if="${@currentUser.isLoggedIn()}"><a th:href="@{/users/logout}">Logout</a></li>
         <li th:if="${@currentUser.isAnonymous()}"><a th:href="@{/users/register}">Register</a></li>
         <li th:if="${@currentUser.isAnonymous()}"><a th:href="@{/users/login}">Login</a></li>
+        <li th:if="${@currentUser.isLoggedIn()}"><a th:href="@{/support}">Support</a></li>
     </ul>
 </nav>
 
