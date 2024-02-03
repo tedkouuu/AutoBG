@@ -1,6 +1,5 @@
 package project.autobg.service;
 
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import project.autobg.model.dto.AddOfferDTO;
 import project.autobg.model.entity.ModelEntity;
@@ -11,8 +10,6 @@ import project.autobg.repository.ModelRepository;
 import project.autobg.repository.OfferRepository;
 import project.autobg.repository.UserRepository;
 import project.autobg.user.CurrentUser;
-
-import java.util.concurrent.CompletableFuture;
 
 @Service
 public class OfferService {
@@ -31,7 +28,7 @@ public class OfferService {
         this.modelRepository = modelRepository;
     }
 
-    public CompletableFuture<Void> addOffer(AddOfferDTO addOfferDTO) {
+    public void addOffer(AddOfferDTO addOfferDTO) {
 
         OfferEntity newOffer = offerMapper.addOfferDtoToOfferEntity(addOfferDTO);
 
@@ -46,6 +43,5 @@ public class OfferService {
 
         offerRepository.save(newOffer);
 
-        return CompletableFuture.completedFuture(null);
     }
 }

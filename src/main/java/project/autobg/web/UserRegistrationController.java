@@ -51,7 +51,7 @@ public class UserRegistrationController {
             return "redirect:/users/register";
         }
 
-        userService.registerAndLoginAsync(userRegisterDTO);
+        userService.registerAndLogin(userRegisterDTO);
         return "redirect:/";
     }
 }
