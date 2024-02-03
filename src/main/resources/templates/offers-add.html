@@ -21,7 +21,7 @@
 
     <form th:method="post"
           th:action="@{/offers/add}"
-          th:object="${addOfferModel}">
+          th:object="${addOfferDTO}">
 
         <div class="wrapper">
 
@@ -52,6 +52,8 @@
                     <select class="select-offer-add"
                             name="engine"
                             th:errorclass="is-invalid">
+
+                        <option value="">- Select engine type -</option>
                         <option th:each="e : ${T(project.autobg.model.enums.EngineEnum).values()}"
                                 th:text="${e}"
                                 th:value="${e}"
@@ -70,6 +72,7 @@
                             name="transmission"
                             th:errorclass="is-invalid">
 
+                        <option value="">- Select transmission type -</option>
                         <option th:each="t : ${T(project.autobg.model.enums.TransmissionEnum).values()}"
                                 th:text="${t}"
                                 th:value="${t}"
