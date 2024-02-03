@@ -12,6 +12,7 @@ import project.autobg.repository.UserRepository;
 import project.autobg.user.CurrentUser;
 
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class UserService {
@@ -54,7 +55,7 @@ public class UserService {
         return success;
     }
 
-    public void registerAndLogin(UserRegisterDTO userRegisterDTO) {
+    public CompletableFuture<Void> registerAndLoginAsync(UserRegisterDTO userRegisterDTO) {
 
         UserEntity newUser = userMapper.userDtoToUserEntity(userRegisterDTO);
         newUser.setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()));
@@ -62,6 +63,7 @@ public class UserService {
         userRepository.save(newUser);
         login(newUser);
 
+        return CompletableFuture.completedFuture(null);
     }
 
     private void login(UserEntity userEntity) {
