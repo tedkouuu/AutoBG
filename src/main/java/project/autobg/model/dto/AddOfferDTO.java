@@ -1,9 +1,6 @@
 package project.autobg.model.dto;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
 import project.autobg.model.enums.EngineEnum;
 import project.autobg.model.enums.TransmissionEnum;
 
@@ -33,6 +30,7 @@ public class AddOfferDTO {
     private int mileage;
 
     @NotEmpty
+    @Size(max = 200, message = "The field cannot have more than 200 characters")
     private String description;
 
     public TransmissionEnum getTransmission() {
