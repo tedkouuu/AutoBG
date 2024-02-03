@@ -15,6 +15,7 @@ public class AddOfferDTO {
     @NotNull
     private EngineEnum engine;
 
+    @NotNull
     private String imageUrl;
 
     @NotNull
