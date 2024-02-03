@@ -3,8 +3,11 @@ package project.autobg.model.dto;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import project.autobg.model.enums.EngineEnum;
 import project.autobg.model.enums.TransmissionEnum;
+
+import java.math.BigDecimal;
 
 public class AddOfferDTO {
 
@@ -15,11 +18,22 @@ public class AddOfferDTO {
     @NotNull
     private EngineEnum engine;
 
-    @NotEmpty
     private String imageUrl;
 
     @NotNull
     private TransmissionEnum transmission;
+
+    @Positive
+    @NotNull
+    private BigDecimal price;
+
+    @Min(1930)
+    private int year;
+
+    private int mileage;
+
+    @NotEmpty
+    private String description;
 
     public TransmissionEnum getTransmission() {
         return transmission;
@@ -54,6 +68,42 @@ public class AddOfferDTO {
 
     public AddOfferDTO setModelId(Long modelId) {
         this.modelId = modelId;
+        return this;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public AddOfferDTO setPrice(BigDecimal price) {
+        this.price = price;
+        return this;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public AddOfferDTO setYear(int year) {
+        this.year = year;
+        return this;
+    }
+
+    public int getMileage() {
+        return mileage;
+    }
+
+    public AddOfferDTO setMileage(int mileage) {
+        this.mileage = mileage;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public AddOfferDTO setDescription(String description) {
+        this.description = description;
         return this;
     }
 }

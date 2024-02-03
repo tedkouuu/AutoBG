@@ -53,6 +53,7 @@ public class OfferController {
             return "redirect:/offers/add";
         }
 
+        offerService.addOffer(addOfferDTO);
         return "redirect:/";
     }
 }

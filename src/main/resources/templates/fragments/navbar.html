@@ -16,7 +16,7 @@
     <a href="/"><img id="logo-img" alt="car picture" src="/images/car.png"></a>
     <ul>
         <li><a href="/brands/all">All Brands</a></li>
-        <li><a href="/offers/add">Add Offer</a></li>
+        <li th:if="${@currentUser.isLoggedIn()}"><a th:href="@{/offers/add}">Add Offer</a></li>
         <li><a href="/offers/all">All Offers</a></li>
         <li><a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a></li>

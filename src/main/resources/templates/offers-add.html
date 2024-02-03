@@ -38,9 +38,12 @@
                         <optgroup
                                 th:each="brand : ${brands}"
                                 th:label="${brand.name}">
-                            <option>Model1</option>
-                            <option>Model2</option>
-                            <option>Model3</option>
+                            <option
+                                    th:each="model : ${brand.models}"
+                                    th:text="${model.name}"
+                                    th:value="${model.id}"
+                                    th:selected="*{modelId} == ${model.id}">Model
+                            </option>
                         </optgroup>
                     </select>
                 </div>
