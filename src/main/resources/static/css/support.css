@@ -285,3 +285,17 @@ button.accent {
         font-size: 1.1em;
     }
 }
+
+.wrapper{
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+.link{
+    text-decoration: none;
+    font-size: larger;
+}
+
+.link:hover{
+    color: red;
+}

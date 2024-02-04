@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class ChatController {
 
+//  TODO: Do load testing
+
     @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/public")
     public ChatMessage sendMessage(
