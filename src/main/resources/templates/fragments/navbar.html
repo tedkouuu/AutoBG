@@ -18,7 +18,7 @@
         <li><a href="/brands/all">All Brands</a></li>
         <li th:if="${@currentUser.isLoggedIn()}"><a th:href="@{/offers/add}">Add Offer</a></li>
         <li><a href="/offers/all">All Offers</a></li>
-        <li><a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
+        <li><a class="nav-link dropdown-toggle" th:href="@{/pages/admin}" id="navbarDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a></li>
         <li th:if="${@currentUser.isLoggedIn()}"><a th:href="@{/users/logout}">Logout</a></li>
         <li th:if="${@currentUser.isAnonymous()}"><a th:href="@{/users/register}">Register</a></li>

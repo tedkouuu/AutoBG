@@ -92,7 +92,10 @@ body {
 
 .login-div .login_btn:hover {
     background-color: red;
+}
 
+#email{
+    margin-bottom: 10px;
 }
 
 
