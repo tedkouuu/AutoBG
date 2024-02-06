@@ -11,7 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import project.autobg.model.enums.UserRoleEnum;
 import project.autobg.repository.UserRepository;
-import project.autobg.service.AutoBGUserDetailsService;
+import project.autobg.configService.AutoBGUserDetailsService;
 
 @Configuration
 public class SecurityConfig {
@@ -41,7 +41,6 @@ public class SecurityConfig {
                         .anyRequest().authenticated()).build();
 
     }
-
 
     @Bean
     public UserDetailsService userDetailsService(UserRepository userRepository) {

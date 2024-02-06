@@ -1,4 +1,4 @@
-package project.autobg.service;
+package project.autobg.configService;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
