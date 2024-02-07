@@ -1,7 +1,3 @@
-INSERT INTO users (id, email, first_name, last_name, image_url, is_active, password)
-VALUES (1, 'teo@gmail.com', 'Teodor', 'Trendafilov', null, 1,
-        '$2a$10$0FG2toqSiiXx0im0t9Hez.zqnYXtdSo8ho/AxYdUtjnVPBQmMsNvy');
-
 INSERT INTO brands (id, name)
 VALUES (1, 'Ford'),
        (2, 'Toyota');
