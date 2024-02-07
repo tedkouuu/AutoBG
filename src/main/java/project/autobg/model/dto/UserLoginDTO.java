@@ -8,18 +8,18 @@ public class UserLoginDTO {
 
     @NotEmpty
     @Email
-    private String username;
+    private String email;
 
     @NotEmpty
     @Size(min = 3, max = 20, message = "Size must be between 3 and and 20")
     private String password;
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public UserLoginDTO setUsername(String username) {
-        this.username = username;
+    public UserLoginDTO setEmail(String email) {
+        this.email = email;
         return this;
     }
 
@@ -35,7 +35,7 @@ public class UserLoginDTO {
     @Override
     public String toString() {
         return "UserLoginDTO{" +
-                "username='" + username + '\'' +
+                "username='" + email + '\'' +
                 ", password='" + (password != null ? "[PROVIDED]" : null) + '\'' +
                 '}';
     }
