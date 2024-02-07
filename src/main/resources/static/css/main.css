@@ -51,3 +51,31 @@ body {
     font-weight: bold;
 }
 
+.nav span {
+    color: white;
+}
+
+.nav input {
+    border: none;
+    color: lightgray;
+    background-color: transparent;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.nav input:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.nav form {
+    display: inline-block;
+}
+
+.nav .nav-item {
+    margin-top: 2px;
+}
+
+
+
+

@@ -83,7 +83,7 @@ public class UserService {
 
     public void init() {
 
-        if (userRepository.count() == 0) {
+        if (userRepository.count() == 0 && userRoleRepository.count() == 0) {
             UserRoleEntity adminRole = new UserRoleEntity().setUserRole(UserRoleEnum.ADMIN);
             UserRoleEntity moderatorRole = new UserRoleEntity().setUserRole(UserRoleEnum.MODERATOR);
             UserRoleEntity userRole = new UserRoleEntity().setUserRole(UserRoleEnum.USER);
