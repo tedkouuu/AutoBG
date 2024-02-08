@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/reset.css"/>
     <link rel="stylesheet" href="/css/login.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
 
 </head>
 
@@ -36,9 +37,14 @@
                name="password"
                placeholder="Password"/>
         <br>
-        <button class="login_btn">Login</button>
-    </form>
 
+        <p th:if="${bad_credentials}" class="errors alert alert-danger">
+            Invalid username or password
+        </p>
+
+        <button class="login_btn">Login</button>
+
+    </form>
 </div>
 
 <div>

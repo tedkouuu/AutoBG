@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import project.autobg.model.enums.UserRoleEnum;
 import project.autobg.repository.UserRepository;
 import project.autobg.configService.AutoBGUserDetailsService;
@@ -43,7 +44,7 @@ public class SecurityConfig {
                 .formLogin(formLogin -> {
                             formLogin.loginPage("/users/login") // Custom login page URL
                                     .usernameParameter("email") // Username parameter in the login form
-                                    .passwordParameter("password") // Password parameter in the login form
+                                    .passwordParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY) // Password parameter in the login form
                                     .defaultSuccessUrl("/offers/all") // Redirect to "/" on successful login
                                     .failureForwardUrl("/users/login-error"); // Redirect to "/users/login-error" on login failure
                         }
