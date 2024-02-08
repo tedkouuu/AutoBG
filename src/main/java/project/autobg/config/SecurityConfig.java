@@ -44,7 +44,7 @@ public class SecurityConfig {
                             formLogin.loginPage("/users/login") // Custom login page URL
                                     .usernameParameter("email") // Username parameter in the login form
                                     .passwordParameter("password") // Password parameter in the login form
-                                    .defaultSuccessUrl("/") // Redirect to "/" on successful login
+                                    .defaultSuccessUrl("/offers/all") // Redirect to "/" on successful login
                                     .failureForwardUrl("/users/login-error"); // Redirect to "/users/login-error" on login failure
                         }
                 ).logout(

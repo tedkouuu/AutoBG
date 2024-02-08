@@ -2,9 +2,13 @@ package project.autobg.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import project.autobg.model.dto.UserLoginDTO;
 import project.autobg.model.dto.UserRegisterDTO;
 import project.autobg.model.entity.UserEntity;
 import project.autobg.model.entity.UserRoleEntity;
@@ -12,10 +16,8 @@ import project.autobg.model.enums.UserRoleEnum;
 import project.autobg.model.mapper.UserMapper;
 import project.autobg.repository.UserRepository;
 import project.autobg.repository.UserRoleRepository;
-import project.autobg.user.CurrentUser;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -23,41 +25,17 @@ public class UserService {
     private final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
     private final UserRepository userRepository;
-    private final CurrentUser currentUser;
     private final PasswordEncoder passwordEncoder;
     private final UserMapper userMapper;
     private final UserRoleRepository userRoleRepository;
+    private final UserDetailsService autoBGUserDetailsService;
 
-    public UserService(UserRepository userRepository, CurrentUser currentUser, PasswordEncoder passwordEncoder, UserMapper userMapper, UserRoleRepository userRoleRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, UserMapper userMapper, UserRoleRepository userRoleRepository, UserDetailsService autoBGUserDetailsService) {
         this.userRepository = userRepository;
-        this.currentUser = currentUser;
         this.passwordEncoder = passwordEncoder;
         this.userMapper = userMapper;
         this.userRoleRepository = userRoleRepository;
-    }
-
-    public boolean login(UserLoginDTO loginDTO) {
-        Optional<UserEntity> userOpt = userRepository.
-                findByEmail(loginDTO.getEmail());
-
-        if (userOpt.isEmpty()) {
-            LOGGER.debug("User with name [{}] not found", loginDTO.getEmail());
-            return false;
-        }
-
-        String rawPassword = loginDTO.getPassword();
-        String encodedPassword = userOpt.get().getPassword();
-
-        boolean success = passwordEncoder.
-                matches(rawPassword, encodedPassword);
-
-        if (success) {
-            login(userOpt.get());
-        } else {
-            logout();
-        }
-
-        return success;
+        this.autoBGUserDetailsService = autoBGUserDetailsService;
     }
 
     public void registerAndLogin(UserRegisterDTO userRegisterDTO) {
@@ -66,19 +44,19 @@ public class UserService {
         newUser.setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()));
 
         userRepository.save(newUser);
-        login(newUser);
 
-    }
+        UserDetails userDetails = autoBGUserDetailsService.loadUserByUsername(newUser.getEmail());
 
-    private void login(UserEntity userEntity) {
-        currentUser.
-                setLoggedIn(true).
-                setName(userEntity.getFirstName()).
-                setEmail(userEntity.getEmail());
-    }
+        Authentication auth =
+                new UsernamePasswordAuthenticationToken(
+                        userDetails,
+                        userDetails.getPassword(),
+                        userDetails.getAuthorities()
+                );
 
-    public void logout() {
-        currentUser.clear();
+        SecurityContextHolder.
+                getContext().
+                setAuthentication(auth);
     }
 
     public void init() {

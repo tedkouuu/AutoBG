@@ -52,6 +52,6 @@ public class UserRegistrationController {
         }
 
         userService.registerAndLogin(userRegisterDTO);
-        return "redirect:/";
+        return "redirect:/offers/all";
     }
 }
