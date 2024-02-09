@@ -14,11 +14,15 @@ import project.autobg.model.validation.UniqueUserEmail;
 public class UserRegisterDTO {
 
     @NotEmpty
-    @Size(min = 3, max = 20, message = "Size must be between 3 and and 20")
+    @Size(min = 3, max = 20, message = "First name must be between 3 and 20 characters")
     private String firstName;
 
     @NotEmpty
-    @Size(min = 3, max = 20, message = "Size must be between 3 and and 20")
+    @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters")
+    private String username;
+
+    @NotEmpty
+    @Size(min = 3, max = 20, message = "Last name must be between 3 and 20 characters")
     private String lastName;
 
     @NotEmpty(message = "User email should be provided")
@@ -76,6 +80,15 @@ public class UserRegisterDTO {
 
     public UserRegisterDTO setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+        return this;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public UserRegisterDTO setUsername(String username) {
+        this.username = username;
         return this;
     }
 }

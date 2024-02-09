@@ -43,7 +43,7 @@ public class SecurityConfig {
                                 .anyRequest().authenticated())
                 .formLogin(formLogin -> {
                             formLogin.loginPage("/users/login") // Custom login page URL
-                                    .usernameParameter("email") // Username parameter in the login form
+                                    .usernameParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY) // Username parameter in the login form
                                     .passwordParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY) // Password parameter in the login form
                                     .defaultSuccessUrl("/offers/all") // Redirect to "/" on successful login
                                     .failureForwardUrl("/users/login-error"); // Redirect to "/users/login-error" on login failure

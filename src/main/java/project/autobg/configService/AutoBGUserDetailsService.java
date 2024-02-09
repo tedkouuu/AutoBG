@@ -22,14 +22,14 @@ public class AutoBGUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.
-                findByEmail(username).
+                findByUsername(username).
                 map(this::map).
                 orElseThrow(() -> new UsernameNotFoundException("User with email " + username + " not found!"));
     }
 
     private UserDetails map(UserEntity userEntity) {
         return User.builder().
-                username(userEntity.getEmail()).
+                username(userEntity.getUsername()).
                 password(userEntity.getPassword()).
                 authorities(userEntity.getUserRoles().
                         stream().

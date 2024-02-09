@@ -41,7 +41,7 @@ public class UserService {
 
         userRepository.save(newUser);
 
-        UserDetails userDetails = autoBGUserDetailsService.loadUserByUsername(newUser.getEmail());
+        UserDetails userDetails = autoBGUserDetailsService.loadUserByUsername(newUser.getUsername());
 
         Authentication auth =
                 new UsernamePasswordAuthenticationToken(
@@ -78,6 +78,7 @@ public class UserService {
                 setUserRoles(roles).
                 setFirstName("Admin").
                 setLastName("Adminov").
+                setUsername("admin123").
                 setEmail("admin@example.com").
                 setPassword(passwordEncoder.encode("123"));
 
@@ -90,6 +91,7 @@ public class UserService {
                 setUserRoles(roles).
                 setFirstName("Moderator").
                 setLastName("Moderatorov").
+                setUsername("moderator123").
                 setEmail("moderator@example.com").
                 setPassword(passwordEncoder.encode("123"));
 
@@ -103,6 +105,7 @@ public class UserService {
                 setFirstName("User").
                 setLastName("Userov").
                 setEmail("user@example.com").
+                setUsername("user123").
                 setPassword(passwordEncoder.encode("123"));
 
         userRepository.save(user);

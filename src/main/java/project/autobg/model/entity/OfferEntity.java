@@ -15,6 +15,7 @@ public class OfferEntity extends BaseEntity {
     @Column(nullable = false)
     private EngineEnum engine;
 
+    @Column(nullable = false)
     private String imageUrl;
 
     private int mileage;

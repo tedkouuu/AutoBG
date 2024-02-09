@@ -12,10 +12,16 @@ public class UserEntity extends BaseEntity {
     @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
+    private String username;
+
+    @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private String firstName;
 
+    @Column(nullable = false)
     private String lastName;
 
     private boolean isActive;
@@ -67,6 +73,15 @@ public class UserEntity extends BaseEntity {
 
     public UserEntity setActive(boolean active) {
         isActive = active;
+        return this;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public UserEntity setUsername(String username) {
+        this.username = username;
         return this;
     }
 
