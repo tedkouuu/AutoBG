@@ -1,7 +1,6 @@
 package project.autobg.web;
 
 import jakarta.validation.Valid;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -51,7 +50,7 @@ public class UserRegistrationController {
             return "redirect:/users/register";
         }
 
-        userService.registerAndLogin(userRegisterDTO);
+        userService.register(userRegisterDTO);
         return "redirect:/offers/all";
     }
 }

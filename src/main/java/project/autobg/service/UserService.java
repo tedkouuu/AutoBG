@@ -34,25 +34,13 @@ public class UserService {
         this.autoBGUserDetailsService = autoBGUserDetailsService;
     }
 
-    public void registerAndLogin(UserRegisterDTO userRegisterDTO) {
+    public void register(UserRegisterDTO userRegisterDTO) {
 
         UserEntity newUser = userMapper.userDtoToUserEntity(userRegisterDTO);
         newUser.setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()));
 
         userRepository.save(newUser);
 
-        UserDetails userDetails = autoBGUserDetailsService.loadUserByUsername(newUser.getUsername());
-
-        Authentication auth =
-                new UsernamePasswordAuthenticationToken(
-                        userDetails,
-                        userDetails.getPassword(),
-                        userDetails.getAuthorities()
-                );
-
-        SecurityContextHolder.
-                getContext().
-                setAuthentication(auth);
     }
 
     public void init() {
