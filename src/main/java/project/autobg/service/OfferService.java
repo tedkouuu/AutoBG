@@ -1,10 +1,12 @@
 package project.autobg.service;
 
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import project.autobg.model.dto.AddOfferDTO;
 import project.autobg.model.entity.ModelEntity;
 import project.autobg.model.entity.OfferEntity;
+import project.autobg.model.entity.UserEntity;
 import project.autobg.model.mapper.OfferMapper;
 import project.autobg.repository.ModelRepository;
 import project.autobg.repository.OfferRepository;
@@ -29,16 +31,17 @@ public class OfferService {
         this.autoBGUserDetailsService = autoBGUserDetailsService;
     }
 
-//    TODO: Refactor 
-
-    public void addOffer(AddOfferDTO addOfferDTO) {
+    public void addOffer(AddOfferDTO addOfferDTO, UserDetails userDetails) {
 
         OfferEntity newOffer = offerMapper.addOfferDtoToOfferEntity(addOfferDTO);
 
         ModelEntity model = modelRepository.findById(addOfferDTO.getModelId()).
                 orElseThrow();
 
+        UserEntity seller = userRepository.findByUsername(userDetails.getUsername()).orElseThrow();
+
         newOffer.setModel(model);
+        newOffer.setSeller(seller);
 
         offerRepository.save(newOffer);
 
