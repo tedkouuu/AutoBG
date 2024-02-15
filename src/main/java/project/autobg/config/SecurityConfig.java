@@ -32,13 +32,13 @@ public class SecurityConfig {
                                 // Allow access to any endpoint without authentication
                                 .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
                                 // Allow access to specific paths without authentication
-                                .requestMatchers("/", "/users/login", "/users/register").permitAll()
+                                .requestMatchers("/", "/users/login", "/users/register", "/offers/all", "/offers/search").permitAll()
                                 // Require the role of MODERATOR for access to "/pages/moderators"
                                 .requestMatchers("/pages/moderators").hasRole(UserRoleEnum.MODERATOR.name())
                                 // Require the role of ADMIN for access to "/pages/admins"
                                 .requestMatchers("/pages/admins").hasRole(UserRoleEnum.ADMIN.name())
                                 // Require authentication for "/support" path
-                                .requestMatchers("/support").authenticated()
+                                .requestMatchers("/support", "/offers/add").authenticated()
                                 // Require authentication for any other request
                                 .anyRequest().authenticated())
                 .formLogin(formLogin -> {
